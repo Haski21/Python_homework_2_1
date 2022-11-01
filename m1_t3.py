@@ -18,12 +18,12 @@ years = int(input('How much years:'))
 if 99 < invest < 1_000_001 and 0 < persent < 21 and 1 < years < 101:
     print('0 year:', invest)
     a = 1
-    while years - 1:
+    while years:
         invest += invest // persent
         print(a, 'year:', invest)
         a += 1
         years -= 1
 else: print('not true value')
 
-# совсем не уверен в этой формуле
-print(invest * persent *  years / 10)
+#не моу понять, почему не работает round
+print(round(invest * (1 + persent / 100) ** years, 5))
